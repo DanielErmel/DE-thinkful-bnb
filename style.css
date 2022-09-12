@@ -60,7 +60,7 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 48px;
   color: #fff;
 }
 
@@ -162,7 +162,7 @@ footer p {
 
   .logo {
     font-family: "Pangolin", cursive;
-    font-size: 72px;
+    font-size: 48px;
     color: #fff;
     text-align: left;
   }
