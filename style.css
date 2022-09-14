@@ -28,10 +28,24 @@ section {
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 main img {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.host-list {
+  margin-bottom: 30px;
+}
+
+.host-title {
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 /* ---  Groups & Items --- */
@@ -54,14 +68,25 @@ main img {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 10px 0 10px;
   text-align: center;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 48px;
+  font-size: 60px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
 }
 
 header nav ul li {
@@ -72,6 +97,10 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  padding-right: 0;
 }
 
 header nav ul li a:hover {
@@ -99,9 +128,16 @@ form button {
   background-color: #ff385c;
   border: none;
   color: #fff;
-  font-size: 24px;
-  padding: 15px;
+  font-size: 100%;
+  padding: 5px;
   width: 100%;
+}
+
+.spaced {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* -------  Footer ------- */
@@ -116,105 +152,100 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
 
-@media screen and (min-width: 480px) {
-  /* ---  Groups & Items --- */
-  .group {
+/* ---------- Desktop Screens ----------*/
+
+@media all and (min-width: 480px) {
+
+  /* ------- Dt Header ------- */
+  header {
     display: flex;
-    flex-direction: column;
-  }
-
-  .group-navi {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .group-stay {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .item {
-    flex: 1;
-    margin: 10px;
-  }
-
-  .item.label{
-    justify-content: center
-    
-  }
-
-}
-
-@media screen and (min-width: 992px) {
-  /* ---  Groups & Items --- */
-
-  .group {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .item {
-    flex: 2;
-    margin: 5px;
+    justify-content: space-between;
+    padding: 0 30px;
   }
 
   .logo {
-    font-family: "Pangolin", cursive;
-    font-size: 48px;
-    color: #fff;
-    text-align: left;
+    margin: 14px 0;
+    padding-top: 0;
+    font-size: 50px;
   }
 
-  .group-nav {
+  header nav {
+    margin-top: 20px;
+  }
+
+
+  /* ------- Dt Search form ------- */
+  form {
     display: flex;
-    flex-direction: row;
-    align-content: flex-end;
+    justify-content: space-between;
   }
 
-  .group-stay {
+  form select, form input {
+  width: 100%;
+}
+
+  .spaced {
     flex-direction: column;
-    align-self: center;
-    flex: 1;
   }
 
-  .group-img {
+
+  form div{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    width: 15%;
   }
 
-  .host {
-    align-self: center;
+  form button{
+    width: 15%;
   }
 
-  
-}
 
-@media screen and (min-width: 1200px) {
+  /* ------- Dt About ------- */
+  main img {
+    margin-bottom: 0;
+  }
 
- /* .group {
+  .row-align {
     display: flex;
-    flex-direction: row;
-  } */
+  }
 
-.group-stay {
-  flex-direction: row;
-  align-items: center;
-  /* flex: 1; */
+  .vertically-centered {
+    align-items: center;
+  }
+
+  /* ------- Dt Ideas ------- */
+  .grid2x2 {
+    flex-wrap: wrap;
+  }
+
+  .grid-align {
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  /* ------- Dt Host ------- */
+  .host-list {
+    margin-bottom: 0;
+  }
+
+  .host-title {
+    padding: 0;
+  }
+}
+
+/*--- Very Small Screens (min-width: 216px) ---*/
+
+@media all and (max-width: 300px) {
+  .logo {
+    font-size: 42px;
+  }
   
-}
-.item {
-  flex: 2;
-  margin: 5px;
-  
-}
-
-.item.label{
-  text-align: right;
-}
-
-
+  form select,
+  form input {  
+    width: 60%;
+  }
 
 }
